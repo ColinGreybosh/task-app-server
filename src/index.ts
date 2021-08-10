@@ -13,7 +13,11 @@ const logDirectory = process.env.LOG_DIRECTORY;
 
 const logger: winston.Logger = winston.createLogger({
     level: 'info',
-    format: winston.format.json(),
+    format: winston.format.combine(
+        winston.format.timestamp(),
+        winston.format.json(),
+        winston.format.prettyPrint()
+    ),
     transports: [
         // - Write all logs with level `error` and below to `error.log`
         new winston.transports.File({ filename: `${logDirectory}/error.log`, level: 'error' }),
