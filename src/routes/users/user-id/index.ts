@@ -1,29 +1,32 @@
 import express from 'express';
 
-import { router as userIdRouter} from './user-id';
+import { router as sessionsRouter } from './sessions';
+import { router as tasksRouter } from './tasks';
 
 const router: express.Router = express.Router();
 
 router.post('/', (req, res) => {
-    // Create new user
+    // Error
     throw new Error("Unimplemented!");
 });
 
 router.get('/', (req, res) => {
-    // Error
+    // Retrieve user details
     throw new Error("Unimplemented!");
 });
 
 router.put('/', (req, res) => {
-    // Bulk update of users
+    // Update this user's details if it exists
     throw new Error("Unimplemented!");
 });
 
 router.delete('/', (req, res) => {
-    // Error
+    // Remove this user
     throw new Error("Unimplemented!");
 });
 
-router.use(/[0-9]+.*/, userIdRouter);
+router.use('/tasks', tasksRouter);
+
+router.use('/sessions', sessionsRouter);
 
 export { router };

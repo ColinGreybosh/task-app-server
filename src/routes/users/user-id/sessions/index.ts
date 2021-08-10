@@ -1,29 +1,25 @@
 import express from 'express';
 
-import { router as userIdRouter} from './user-id';
-
 const router: express.Router = express.Router();
 
 router.post('/', (req, res) => {
-    // Create new user
+    // Create new session for this user
     throw new Error("Unimplemented!");
 });
 
 router.get('/', (req, res) => {
-    // Error
+    // Retrieve all sessions for this user
     throw new Error("Unimplemented!");
 });
 
 router.put('/', (req, res) => {
-    // Bulk update of users
+    // Bulk update of this user's sessions
     throw new Error("Unimplemented!");
 });
 
 router.delete('/', (req, res) => {
-    // Error
+    // Remove all of this user's sessions
     throw new Error("Unimplemented!");
 });
-
-router.use(/[0-9]+.*/, userIdRouter);
 
 export { router };

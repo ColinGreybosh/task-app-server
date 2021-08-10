@@ -1,5 +1,7 @@
 import express from 'express';
 
+import { router as taskIdRouter } from './task-id';
+
 const router: express.Router = express.Router();
 
 router.post('/', (req, res) => {
@@ -21,5 +23,7 @@ router.delete('/', (req, res) => {
     // Remove all tasks
     throw new Error("Unimplemented!");
 });
+
+router.use(/[0-9]+.*/, taskIdRouter);
 
 export { router };
