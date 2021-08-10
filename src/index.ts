@@ -2,6 +2,8 @@ import dotenv from 'dotenv';
 import express from 'express';
 import winston from 'winston';
 
+import router from './routes/index';
+
 dotenv.config();
 
 const app = express();
@@ -28,10 +30,7 @@ if (process.env.NODE_ENV !== 'production') {
     }));
 }
 
-// define a route handler for the default home page
-app.get('/', (req, res) => {
-    res.send('Hello world!');
-});
+app.use(router);
 
 // start the Express server
 app.listen(port, () => {
