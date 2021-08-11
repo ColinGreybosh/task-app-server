@@ -11,7 +11,7 @@ You must have specific environment variables set in order to launch the server:
 - `LOG_DIRECTORY`
   - Set to the directory that you would like the server to save log files to.
 - `API_BASE_URL`
-  - Set to the URL you would like the server API to listen on. For example, a value of `/api` will cause the server to listen for requests sent to `http://HOST/<API_BASE_URL>:8080`.
+  - Set to the URL you would like the server API to listen on. For example, a value of `/api` will cause the server to listen for requests sent to `http://HOST/<API_BASE_URL>:<SERVER_PORT>`.
 
 
 A sample configuration is provided below.
