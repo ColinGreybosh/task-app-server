@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { router as sessionIdRouter } from './session-id';
+import * as sessionId from './session-id';
 
 const router: express.Router = express.Router();
 
@@ -24,6 +24,6 @@ router.delete('/', (req, res) => {
     throw new Error("Unimplemented!");
 });
 
-router.use(/[0-9]+.*/, sessionIdRouter);
+router.use(/[0-9]+.*/, sessionId.router);
 
 export { router };

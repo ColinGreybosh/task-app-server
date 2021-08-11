@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { router as userIdRouter} from './user-id';
+import * as userId from './user-id';
 
 const router: express.Router = express.Router();
 
@@ -24,6 +24,6 @@ router.delete('/', (req, res) => {
     throw new Error("Unimplemented!");
 });
 
-router.use('/:userId', userIdRouter);
+router.use('/:userId', userId.router);
 
 export { router };

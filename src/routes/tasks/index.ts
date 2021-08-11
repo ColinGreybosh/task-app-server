@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { router as taskIdRouter } from './task-id';
+import * as taskId from './task-id';
 
 const router: express.Router = express.Router();
 
@@ -24,6 +24,6 @@ router.delete('/', (req, res) => {
     throw new Error("Unimplemented!");
 });
 
-router.use('/:taskId', taskIdRouter);
+router.use('/:taskId', taskId.router);
 
 export { router };

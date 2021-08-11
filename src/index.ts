@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import express from 'express';
 
-import router from './routes/index';
+import router from './routes';
 import { logger } from './logging';
 
 dotenv.config();
