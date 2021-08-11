@@ -24,6 +24,6 @@ router.delete('/', (req, res) => {
     throw new Error("Unimplemented!");
 });
 
-router.use(/[0-9]+.*/, userIdRouter);
+router.use('/:userId', userIdRouter);
 
 export { router };
