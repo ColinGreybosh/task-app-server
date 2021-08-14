@@ -10,6 +10,7 @@ COPY package*.json ./
 COPY .eslintrc.js ./
 COPY tsconfig.json ./
 COPY tslint.json ./
+COPY src ./src
 
 RUN npm install
 # If you are building your code for production
